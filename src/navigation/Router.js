@@ -22,18 +22,11 @@ function PromoStack() {
 }
 const Tab = createBottomTabNavigator();
 const TabsStack = props => {
-  let initialRoute =
-    typeof props.route.params === 'undefined'
-      ? 'Home'
-      : props.route.params.activeScreen;
-  if (initialRoute === 'undefined' || typeof initialRoute === 'undefined') {
-    initialRoute = 'Home';
-  }
   return (
     <Tab.Navigator
       headerMode="none"
       tabBar={props => <BottomTab {...props} />}
-      initialRouteName={initialRoute}>
+      initialRouteName={"React"}>
      <Stack.Screen headerShown={false} name="React" component={ReactScreen} />
       <Stack.Screen name="ReactNative" component={ReactNative} />
       <Stack.Screen name="Node" component={NodeScreen} />
